@@ -4,6 +4,17 @@ A full-stack AI-powered customer support ticketing system built with Node.js, Ex
 
 ![HelpDesk AI](https://img.shields.io/badge/Stack-PERN-blue) ![AI](https://img.shields.io/badge/AI-Groq%20LLaMA-orange) ![License](https://img.shields.io/badge/License-MIT-green)
 
+## Live Demo
+
+- **Frontend:** https://helpdesk-r64jy4wzc-am364144-4907s-projects.vercel.app
+- **Backend API:** https://helpdesk-ai-bt2g.onrender.com
+- **GitHub:** https://github.com/anuragmishra5122003/helpdesk-ai
+
+### Test Credentials
+- **Email:** anurag@test.com
+- **Password:** 123456
+- **Role:** Admin (full access)
+
 ## Features
 
 - **Authentication** — JWT-based auth with role-based access (Admin, Agent, Customer)
