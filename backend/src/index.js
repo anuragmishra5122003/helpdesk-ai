@@ -14,7 +14,12 @@ const { startJobs } = require('./lib/jobs')
 const app = express()
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://helpdesk-ai-bt2g.onrender.com'],
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'https://helpdesk-ai-bt2g.onrender.com',
+    'https://helpdesk-jzuga2js7-am364144-4907s-projects.vercel.app'
+  ],
   credentials: true
 }))
 app.use(express.json())
