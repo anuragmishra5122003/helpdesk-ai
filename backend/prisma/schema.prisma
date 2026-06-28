@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(CUSTOMER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tickets   Ticket[]
+}
+
+model Ticket {
+  id        Int          @id @default(autoincrement())
+  title     String
+  body      String
+  status    Status       @default(OPEN)
+  priority  Priority     @default(MEDIUM)
+  category  String?
+  summary   String?
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  userId    Int
+  user      User         @relation(fields: [userId], references: [id])
+  messages  Message[]
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  body      String
+  isAI      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  ticketId  Int
+  ticket    Ticket   @relation(fields: [ticketId], references: [id])
+}
+
+enum Role {
+  CUSTOMER
+  AGENT
+  ADMIN
+}
+
+enum Status {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
