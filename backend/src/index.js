@@ -18,7 +18,8 @@ app.use(cors({
     'http://localhost:5173',
     'http://localhost:5174',
     'https://helpdesk-ai-bt2g.onrender.com',
-    'https://helpdesk-jzuga2js7-am364144-4907s-projects.vercel.app'
+    'https://helpdesk-jzuga2js7-am364144-4907s-projects.vercel.app',
+    'https://helpdesk-r64jy4wzc-am364144-4907s-projects.vercel.app'
   ],
   credentials: true
 }))
